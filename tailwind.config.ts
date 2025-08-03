@@ -23,7 +23,8 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				inter: ['Inter', 'system-ui', 'sans-serif'],
+				poppins: ['Poppins', 'system-ui', 'sans-serif'],
+				nunito: ['Nunito', 'system-ui', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -60,13 +61,25 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				navy: {
-					DEFAULT: 'hsl(var(--navy))',
-					foreground: 'hsl(var(--navy-foreground))'
+				'dark-bg': {
+					DEFAULT: 'hsl(var(--dark-bg))',
+					foreground: 'hsl(var(--dark-bg-foreground))'
 				},
-				'soft-gray': {
-					DEFAULT: 'hsl(var(--soft-gray))',
-					foreground: 'hsl(var(--soft-gray-foreground))'
+				'food-orange': {
+					DEFAULT: 'hsl(var(--food-orange))',
+					foreground: 'hsl(var(--food-orange-foreground))'
+				},
+				'food-red': {
+					DEFAULT: 'hsl(var(--food-red))',
+					foreground: 'hsl(var(--food-red-foreground))'
+				},
+				'food-yellow': {
+					DEFAULT: 'hsl(var(--food-yellow))',
+					foreground: 'hsl(var(--food-yellow-foreground))'
+				},
+				'food-green': {
+					DEFAULT: 'hsl(var(--food-green))',
+					foreground: 'hsl(var(--food-green-foreground))'
 				},
 				success: {
 					DEFAULT: 'hsl(var(--success))',

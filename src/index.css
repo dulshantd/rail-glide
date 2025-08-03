@@ -2,55 +2,70 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Train Schedule App Design System - Cool tone palette */
+/* DN FOOD AND BEVS - Vibrant Food Ordering App Design System */
 
 @layer base {
   :root {
-    --background: 210 20% 98%;
-    --foreground: 215 25% 27%;
+    --background: 20 14% 96%;
+    --foreground: 20 14% 4%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 25% 27%;
+    --card-foreground: 20 14% 4%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 27%;
+    --popover-foreground: 20 14% 4%;
 
-    --primary: 199 89% 48%;
+    --primary: 14 86% 55%;
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 199 89% 42%;
+    --primary-hover: 14 86% 50%;
 
-    --secondary: 210 17% 98%;
-    --secondary-foreground: 215 25% 27%;
+    --secondary: 47 96% 53%;
+    --secondary-foreground: 20 14% 4%;
 
-    --muted: 215 28% 17%;
-    --muted-foreground: 215 14% 60%;
+    --muted: 20 14% 4%;
+    --muted-foreground: 25 5% 45%;
 
-    --accent: 210 17% 95%;
-    --accent-foreground: 215 25% 27%;
+    --accent: 142 65% 48%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 215 20% 90%;
-    --input: 215 20% 90%;
-    --ring: 199 89% 48%;
+    --border: 20 6% 90%;
+    --input: 20 6% 90%;
+    --ring: 14 86% 55%;
 
-    --navy: 215 28% 17%;
-    --navy-foreground: 0 0% 100%;
+    --dark-bg: 20 14% 4%;
+    --dark-bg-foreground: 0 0% 100%;
     
-    --soft-gray: 215 16% 47%;
-    --soft-gray-foreground: 0 0% 100%;
+    --food-orange: 25 95% 53%;
+    --food-orange-foreground: 0 0% 100%;
 
-    --success: 142 71% 45%;
+    --food-red: 14 86% 55%;
+    --food-red-foreground: 0 0% 100%;
+    
+    --food-yellow: 47 96% 53%;
+    --food-yellow-foreground: 20 14% 4%;
+    
+    --food-green: 142 65% 48%;
+    --food-green-foreground: 0 0% 100%;
+
+    --success: 142 65% 48%;
     --success-foreground: 0 0% 100%;
     
-    --warning: 38 92% 50%;
-    --warning-foreground: 0 0% 100%;
+    --warning: 47 96% 53%;
+    --warning-foreground: 20 14% 4%;
 
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(199 89% 65%));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--navy)) 0%, hsl(var(--primary)) 100%);
-    --shadow-card: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    --shadow-elevated: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --gradient-primary: linear-gradient(135deg, hsl(var(--food-red)), hsl(var(--food-orange)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--dark-bg)) 0%, hsl(var(--food-red)) 100%);
+    --gradient-food: linear-gradient(135deg, hsl(var(--food-orange)), hsl(var(--food-yellow)));
+    --gradient-glow: linear-gradient(135deg, hsl(var(--food-red) / 0.8), hsl(var(--food-orange) / 0.8));
+    
+    --shadow-card: 0 4px 20px -2px rgb(0 0 0 / 0.1), 0 2px 8px -2px rgb(0 0 0 / 0.05);
+    --shadow-elevated: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 10px 10px -5px rgb(0 0 0 / 0.04);
+    --shadow-glow: 0 0 30px hsl(var(--food-red) / 0.3), 0 0 60px hsl(var(--food-orange) / 0.2);
+    --shadow-glow-yellow: 0 0 20px hsl(var(--food-yellow) / 0.4);
+    --shadow-glow-green: 0 0 20px hsl(var(--food-green) / 0.4);
 
     --radius: 0.5rem;
 
@@ -116,17 +131,25 @@
   }
 
   body {
-    @apply bg-background text-foreground font-inter;
+    @apply bg-background text-foreground font-poppins;
   }
 }
 
 @layer components {
-  .train-card {
-    @apply bg-card border border-border rounded-xl p-4 shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elevated)] transition-all duration-200;
+  .food-card {
+    @apply bg-card border border-border rounded-2xl p-6 shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-elevated)] transition-all duration-300 hover:-translate-y-1;
   }
 
-  .station-input {
-    @apply w-full p-4 bg-card border border-border rounded-xl text-foreground placeholder:text-muted-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all;
+  .glow-card {
+    @apply shadow-[var(--shadow-glow)] hover:shadow-[var(--shadow-glow)] transition-all duration-300;
+  }
+
+  .category-card {
+    @apply bg-gradient-to-br from-food-red to-food-orange rounded-2xl p-6 text-white shadow-[var(--shadow-glow)] hover:scale-105 transition-all duration-300;
+  }
+
+  .search-input {
+    @apply w-full p-4 bg-card border border-border rounded-2xl text-foreground placeholder:text-muted-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all;
   }
 
   .gradient-hero {
@@ -135,5 +158,21 @@
 
   .gradient-primary {
     background: var(--gradient-primary);
+  }
+
+  .gradient-food {
+    background: var(--gradient-food);
+  }
+
+  .gradient-glow {
+    background: var(--gradient-glow);
+  }
+
+  .glow-effect {
+    filter: drop-shadow(0 0 20px hsl(var(--food-red) / 0.5));
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px hsl(var(--food-orange) / 0.6);
   }
 }
